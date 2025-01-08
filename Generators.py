@@ -1,5 +1,7 @@
 """ Generators in Python
+
 Definition
+
 A generator is a special type of iterable in Python that allows you to yield values one
 at a time using the yield keyword instead of returning them all at once. Generators produce items 
 lazily, meaning values are computed and provided only when requested."""
