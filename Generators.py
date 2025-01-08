@@ -76,13 +76,13 @@ Comparison with Iterators
 Generators are a type of iterator, but they are implemented differently in Python."""
 
 """
-Feature   	 Generators	                                      Iterators
-Creation  	 Defined with yield or generator expressions	      Implemented using __iter__ and __next__
-State        Retention	Built-in	                              Must manage manually
-Memory	     Very efficient	                                  Can be less efficient  for large datasets
+Feature   	    Generators	                                       Iterators
+Creation  	    Defined with yield or generator expressions	       Implemented using __iter__ and __next__
+State           Retention	Built-in	                           Must manage manually
+Memory	        Very efficient	                                   Can be less efficient  for large datasets
 efficiency
-Reusability	 Not reusable	                                    Reusable with __iter__ and __next__
-Applications Streaming data, pipelines, custom iterables	  Custom iterators, data processing """
+Reusability	    Not reusable	                                   Reusable with __iter__ and __next__
+Applications    Streaming data, pipelines, custom iterables	       Custom iterators, data processing """
 
 """Example: Custom Range Function"""
 """Example: Fibonacci Sequence"""

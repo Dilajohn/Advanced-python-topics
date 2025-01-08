@@ -1,6 +1,8 @@
-""" Closures in Python
+""" CLOSURES IN PYTHON
+
 Definition
-A closure in Python is a function that retains access to variables from its enclosing scope, even after the outer function has finished executing. Closures enable you to encapsulate behavior and maintain state.
+A closure in Python is a function that retains access to variables from its enclosing scope, 
+even after the outer function has finished executing. Closures enable you to encapsulate behavior and maintain state.
 
 How Closures Work
 . An inner function is defined inside an outer function.
@@ -76,14 +78,13 @@ Advantages
 
 Comparison with Regular Functions
 
-Feature	                        Regular Function	                                     Closure
-Access to Outer Scope	          Limited to global variables	           Can access variables from enclosing scope
-State Retention	                No	                                   Yes
-Encapsulation	                  No	                                   Yes
-"""
+Feature	                Regular Function	         Closure
 
-""" Caveats
+Access to Outer Scope	Limited to global variables	 Can access variables from enclosing scope
+State Retention	        No	                         Yes
+Encapsulation	        No	                         Yes
 
+ Caveats
 1-Memory Overhead: If closures are not used carefully, they can lead to memory retention issues.
 2-Mutable Variables: Closures with mutable free variables can behave unexpectedly."""
 
