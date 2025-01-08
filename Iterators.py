@@ -93,8 +93,8 @@ Feature	                     Iterable	                                        It
 
 Definition	                 An object capable of returning an iterator.	    An object with a __next__() method.
 Methods Required	           __iter__()	                                      __iter__() and __next__()
-Examples	                   Lists, Tuples, Strings, Dictionaries	            File objects, Generator objects
-Usage	                       Can be passed to iter() to get an iterator.	    Produces values one at a time.
+Examples	                 Lists, Tuples, Strings, Dictionaries	            File objects, Generator objects
+Usage	                     Can be passed to iter() to get an iterator.	    Produces values one at a time.
 
 """
 

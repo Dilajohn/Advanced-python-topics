@@ -1,20 +1,21 @@
 """ Regular Expressions (regex) in Python
+
 Definition
 A regular expression (regex) is a sequence of characters that defines a search pattern. 
 It is used for matching, extracting, and manipulating strings based on specific patterns.
 
 Key Features
-Powerful string searching and pattern matching.
-Flexible text manipulation (e.g., validation, replacement, extraction).
-Supported via Python's re module."""
+
+.Powerful string searching and pattern matching.
+.Flexible text manipulation (e.g., validation, replacement, extraction).
+.Supported via Python's re module."""
 
 """ Common Operations with re Module
 1-Importing the Module """
 
 import re
 
-""" Common Functions """
-"""
+""" Common Functions 
 re.match(): Matches the pattern at the start of the string.
 re.search(): Searches the entire string for a match.
 re.findall(): Returns all occurrences of the pattern as a list.
@@ -81,6 +82,7 @@ if match:
     print(match.group(0))  # Output: 123-456
     print(match.group(1))  # Output: 123
     print(match.group(2))  # Output: 456
+    
 """ 3-Flags for Pattern Matching Flags modify the behavior of the regex engine. """
 pattern = re.compile(r"hello", re.IGNORECASE)
 match = pattern.match("HELLO")

@@ -5,9 +5,10 @@ A decorator in Python is a higher-order function that modifies or enhances the b
 method without changing its structure. Decorators are applied using the @decorator_name syntax.
 
 How Decorators Work
+.Functions as First-Class Citizens: Functions can be passed as arguments, returned from other functions, and 
+assigned to variables.
+.Closures: A decorator leverages closures to wrap a target function, altering its behavior."""
 
-Functions as First-Class Citizens: Functions can be passed as arguments, returned from other functions, and assigned to variables.
-Closures: A decorator leverages closures to wrap a target function, altering its behavior."""
 #Basic Syntax
 
 def decorator_function(original_function):
@@ -89,7 +90,6 @@ def slow_function():
     print("Function complete")
 
 slow_function()
-
 """ Chaining Multiple Decorators """
 
 def decorator_one(func):
