@@ -265,8 +265,71 @@ greet()  """
 # say_hello()  
 """ needto fix the attribute error on line  258"""
 
+""" iterators """
+
+# my_list = [1,2,3]
+# iterator = iter(my_list)
+
+# print(next(iterator))
+# print(next(iterator))
+# print(next(iterator))
+
+# Custom Iterator Class You can create a custom iterator by defining the __iter__() and __next__() methods
+"""
+class MyIterator:
+  def __init__(self,start,end):
+    self.current = start
+    self.end = end
+
+  def __iter__(self):
+    return self
+  
+  def __next__(self):
+    if self.current > self.end:
+      raise StopIteration
+    self.current += 1
+    return self.current - 1
+  
+for num in MyIterator(1,5):
+  print(num)
+
+"""
+
+""" lambda function """
+# add = lambda x, y:x + y
+# print(add(3, 5))
+
+# square = lambda x: x*x
+# print(square(4))
+
+# greet = lambda :"Hello, World!"
+# print(greet())
+
+# is_even = lambda x: "Even" if x % 2 == 0 else "Odd"
+# print(is_even(5))
+
+# numbers = [1,2,3,4]
+# squared = map(lambda x: x ** 2, numbers)
+# print(list(squared))
+
+# numbers = [1, 2, 3, 4, 5]
+# even_numbers = filter(lambda x: x % 2 == 0, numbers)
+# print(list(even_numbers))
+
+from functools import reduce
+numbers = [1, 2, 3, 4]
+product = reduce(lambda x , y: x * y, numbers)
+print(product)
 
 
+items = [("apple",10), ("banana",5), ("cherry",8)]
+sorted_items = sorted(items, key = lambda x: x[1])
+print(sorted_items)
 
+""" Inline functions"""
 
+def apply_function(f, x):
+  return f(x)
 
+result = apply_function(lambda x: x **2, 5)
+print(result)

@@ -73,9 +73,9 @@ print(result)  # Output: 25
 Feature	        Lambda Functions                    	    Regular Functions
 
 Syntax	        Single-line, concise	                    Multi-line, more descriptive
-Name	          Anonymous	                                Named (via def)
+Name	        Anonymous	                                Named (via def)
 Complexity	    Simple operations	                        Suitable for complex logic
-Usage	          Quick, throwaway functions	              Reusable, longer-term logic
+Usage	        Quick, throwaway functions	                Reusable, longer-term logic
 Readability   	Less readable for complex expressions	    More readable for complex expressions
     
 Advantages of Lambdas
