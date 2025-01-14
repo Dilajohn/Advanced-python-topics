@@ -53,7 +53,7 @@ v1 = Vector(1, 2)
 v2 = Vector(3, 4)
 print(v1 + v2)  # Vector(4, 6)
 
-""" 3-Comparison Operators Define behavior for comparison operators:
+""" 3-Comparison Operators :Define behavior for comparison operators:
 
 __eq__(self, other): Implements ==.
 __ne__(self, other): Implements !=.

@@ -50,7 +50,7 @@ thread.join()
 When multiple threads access shared resources, conflicts can occur. Python provides synchronization primitives 
 to avoid such issues."""
 
-""" 1-Locks A lock prevents multiple threads from accessing a resource simultaneously."""
+""" 1-Locks: A lock prevents multiple threads from accessing a resource simultaneously."""
 
 lock = threading.Lock()
 
@@ -67,7 +67,7 @@ thread2.start()
 A-lock.acquire(): Acquires the lock.
 B-lock.release(): Releases the lock."""
 
-""" 2-RLocks (Reentrant Locks) Allows a thread to acquire the same lock multiple times."""
+""" 2-RLocks (Reentrant Locks): Allows a thread to acquire the same lock multiple times."""
 
 rlock = threading.RLock()
 

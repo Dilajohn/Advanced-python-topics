@@ -316,7 +316,7 @@ for num in MyIterator(1,5):
 # even_numbers = filter(lambda x: x % 2 == 0, numbers)
 # print(list(even_numbers))
 
-from functools import reduce
+"""from functools import reduce
 numbers = [1, 2, 3, 4]
 product = reduce(lambda x , y: x * y, numbers)
 print(product)
@@ -326,10 +326,242 @@ items = [("apple",10), ("banana",5), ("cherry",8)]
 sorted_items = sorted(items, key = lambda x: x[1])
 print(sorted_items)
 
-""" Inline functions"""
+ Inline functions
 
 def apply_function(f, x):
   return f(x)
 
 result = apply_function(lambda x: x **2, 5)
-print(result)
+print(result) """
+
+""" THREADING """
+import threading
+
+# def print_numbers():
+  # for i in range(5):
+    # print(f"Number: {i}")
+
+# thread = threading.Thread(target=print_numbers)
+# thread.start()
+# thread.join()
+# print(" Thread finished")    
+
+""" 2-using subclass """
+
+# class MyThread(threading.Thread):
+  # def run(self):
+    # for i in range(5):
+      # print(f"Thread is running: {i}")
+
+# thread = MyThread()   
+# thread.start()
+# thread.join()  
+
+""" Thread synchronization""" 
+# 1-locks
+
+# lock = threading.Lock()
+
+# def safe_print():
+  # with lock:
+    # print("Safe access to shared resource")
+
+# thread1 = threading.Thread(target=safe_print)
+# thread2 = threading.Thread(target=safe_print)
+# thread1.start()
+# thread2.start()
+
+# 2-Rlocks(reentrant locks)
+
+# rlock = threading.RLock()
+
+""" 3- Control access to a resource with a set limit."""
+# allows up to 2 threads
+
+# semaphore = threading.Semaphore(2)
+
+# def limited_access():
+  # with semaphore:
+    # print("Accessing a resource")
+
+# thread1 = threading.Thread(target=limited_access) 
+# thread2 = threading.Thread(target=limited_access) 
+# thread3 = threading.Thread(target=limited_access) 
+# thread1.start()
+# thread2.start()
+# thread3.start()   
+
+"""Thread Communication"""
+""" 1-Event Threads can communicate using threading.Event. """
+
+# event = threading.Event()
+
+# def wait_for_event():
+  # print("Waiting for event.....")
+  # event.wait()
+  # print("Event received!")
+
+# thread = threading.Thread(target=wait_for_event)
+# thread.start()
+
+# event.set()
+
+""" 2-Queue: Uses queue.Queue for thread-safe communication.""" 
+
+# import queue
+
+# q = queue.Queue()
+
+# def producer():
+  # for i in range(5):
+    # q.put(i)
+    # print(f"produced: {i}")
+
+# def consumer():
+  # while not q.empty():
+    # item = q.get()
+    # print(f"consumed: {item}")
+
+# thread1 = threading.Thread(target=producer) 
+# thread2 = threading.Thread(target=consumer) 
+# thread1.start()
+# thread1.join()
+# thread2.start()
+# thread2.join()  
+
+""" ***DEAMON THREADS *** 
+A daemon thread runs in the background and is terminated when the main program exits."""
+
+# def background_task():
+  # while True:
+    # print("Deamon  thread running....")
+
+# thread = threading.Thread(target=background_task, daemon=True)
+# thread.start()
+
+""" Thread Pooling with concurrent.futures
+The ThreadPoolExecutor simplifies managing a pool of threads. """
+
+# from concurrent.futures import ThreadPoolExecutor
+
+# def task(name):
+  # print(f"Executing task {name}")
+
+# with ThreadPoolExecutor(max_workers=3) as executor:
+  # executor.submit(task, "Task 1")
+  # executor.submit(task, "Task 2") 
+  # executor.submit(task, "Task 3")  
+
+""" MAGIC METHODS"""  
+
+# class Person:
+  # def __init__(self, name, age):
+    # self.name = name
+    # self.age = age
+
+  # def __str__(self): 
+    # return f"{self.name}, {self.age} years old"
+  
+  # def __repr__(self):
+    # return f"Person(name={self.name}, age={self.age})"
+  
+# P = Person("Jonathan", 30) 
+# print(str(P))
+# print(repr(P))
+
+""" 2-Arithmetic Operators"""     
+
+# class Vector:
+  # def __init__(self, x, y):
+    # self.x = x
+    # self.y = y
+
+  # def __add__(self, other):
+    # return Vector(self.x + other.x, self.y + other.y) 
+
+  # def __repr__(self):
+    # return f"Vector({self.x}, {self.y})"
+
+# v1 = Vector(1, 2)
+# v2 = Vector(3, 4)
+# print(v1 + v2)   
+
+""" 3-Comparison Operators :Define behavior for comparison operators:"""
+# class Person:
+  # def __init__(self, name, age):
+    # self.name = name
+    # self.age = age
+
+  # def __eq__(self, other):
+    # return self.age == other.age  
+
+# p1 = Person("Jonathan", 30)
+# p2 = Person("Tina",30)
+# print(p1 == p2)    
+
+""" 4-Container-Like Behavior: These methods allow your objects to 
+behave like containers (lists, dictionaries, etc.)"""
+
+# class CustomList:
+  # def __init__(self,items):
+    # self.items = items
+
+  # def __len__(self):
+    # return len(self.items)
+  
+  # def __getitem__(self, index):
+    # return self.items[index]
+  
+# cl = CustomList([1, 2, 3])
+# print(len(cl)) 
+# print(cl[1]) 
+
+""" 5-Callable Objects
+__call__(self, *args, **kwargs): Makes an instance callable like a function. """
+
+# class Greeter:
+  # def __call__(self, name):
+    # return f"Hello, {name}!"
+  
+# greet = Greeter()
+# print(greet("Jonathan"))
+
+""" 6-Attribute Access """
+
+# class DynamicAttributes:
+  # def __getattr__(self, name):
+    # return f"Attribute {name} not found"
+  
+# obj = DynamicAttributes()
+# print(obj.some_attr)  
+
+""" 7-Context Managers """
+
+class FileManager:
+    def __init__(self, filename):
+        self.filename = filename
+
+    def __enter__(self):
+        self.file = open(self.filename, "w") 
+        return self .file   
+    
+    def __exit__(self, exec_type, exec_value, traceback):
+        self.file.close()
+
+
+with FileManager("test.txt") as f:
+    f.write("Hello, World!")
+        
+
+
+  
+
+    
+
+    
+
+
+    
+
+
+  
